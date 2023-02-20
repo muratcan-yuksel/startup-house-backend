@@ -7,6 +7,11 @@ const dotenv = require("dotenv").config();
 app.use(express.json());
 app.use(cors());
 
+//import routes
+const items = require("./routes/items.js");
+//route middleware
+app.use("/api/v1/items", items);
+
 const port = 3001;
 
 app.get("/", (req, res) => res.send("Hello World!"));
